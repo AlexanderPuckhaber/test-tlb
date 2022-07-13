@@ -1,5 +1,7 @@
 Quick memory latency and TLB test program.
 
+To run with perf counters: something like `perf stat -e dTLB-loads-misses,dTLB-loads ./test-tlb 2G 2048`
+
 NOTE! This is a quick hack, and the code itself has some hardcoded
 constants in it that you should look at and possibly change to match
 your machine. 
