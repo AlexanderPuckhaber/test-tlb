@@ -93,10 +93,14 @@ static double do_test(void *map)
 	setitimer(ITIMER_REAL, &itval, NULL);
 
 	gettimeofday(&start, NULL);
-	do {
+	// do {
+	// 	// count++;
+	// 	offset = *(unsigned int *)(map + offset);
+	// } while (!stop);
+	for (uint i = 0; i < 1000 * 1000 * 10; i++) {
 		count++;
-		offset = *(unsigned int *)(map + offset);
-	} while (!stop);
+		offset = *(unsigned int *) (map + offset);
+	}
 	gettimeofday(&end, NULL);
 	usec = usec_diff(&start, &end);
 
